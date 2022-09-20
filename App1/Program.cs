@@ -19,15 +19,15 @@ namespace App1
 
 		static void FailProcess()
 		{
-			//Environment.Exit(0); Второй вариант
-			Process[] process = Process.GetProcesses();
+            //Environment.Exit(0); Второй вариант
+            Process[] process = Process.GetProcesses();
             foreach (var proc in process)
             {
-				if (proc.ProcessName == "App1")
-					{
-						proc.Kill();
-					}
-			}
-		}
+                if (proc.ProcessName == "App1")
+                {
+                    proc.Kill();
+                }
+            }
+        }
 	}
 }

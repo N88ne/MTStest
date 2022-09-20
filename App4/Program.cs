@@ -20,8 +20,8 @@ namespace App4
             foreach (var x in inputStream)
             {
                 counter[x]++;
-                int newX = x - sortFactor;
-                if (k < newX)
+                int minX = x - sortFactor;
+                if (k < minX)
                 {
                     while(counter[k] != 0)
                     {
@@ -44,11 +44,11 @@ namespace App4
 
         static void Main(string[] args)
         {
-            IEnumerable<int> test = new List<int>() { 7, 8, 4, 5, 7, 8, 4, 5, 4, 9, 5, 8 , 5 , 6 , 7 , 8 , 9 , 8 ,9 , 7 ,8 ,7 ,5 ,4 ,5 ,6 ,4, 4,6, 8,4 ,5 ,6 ,4,5,6, 10,11,21,33,35,36};
+            IEnumerable<int> test = new List<int>() { 7, 8, 4, 5, 7, 8, 4, 5, 4, 9, 5, 8 , 5 , 6 , 7 , 8 , 9 , 8 ,9 , 7 ,8};
             IEnumerable<int> result = Sort(test, 5, 36);
             foreach (var item in result)
             {
-                Console.WriteLine(item);
+                Console.Write("{0} ",item);
             }
 
 

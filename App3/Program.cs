@@ -19,7 +19,7 @@ namespace App3
         {
             IList<(T item, int? tail)> items = new List<(T item, int? tail)>();
             int l = enumerable.Count();
-            if(tailLength <= 0)
+            if(tailLength <= 0 || tailLength == null)
             {
                 foreach (var item in enumerable)
                 {
@@ -37,18 +37,18 @@ namespace App3
             }
             else
             {
-                int k = 1;
+                int counter = 1;
                 foreach (var item in enumerable)
                 {
-                    if (l - k == tailLength - 1)
+                    if (l - counter == tailLength - 1)
                     {
                         items.Add((item, --tailLength));
-                        k++;
+                        counter++;
                     }
                     else
                     {
                         items.Add((item, null));
-                        k++;
+                        counter++;
                     }
                 }
                 return items;
@@ -57,7 +57,7 @@ namespace App3
         static void Main(string[] args)
         {
 
-            IEnumerable<(int item, int? tail)> numbers = new[] { 1, 2, 3, 4}.EnumerateFromTail(4);
+            IEnumerable<(int item, int? tail)> numbers = new[] { 1, 2, 3, 4}.EnumerateFromTail(2);
             foreach (var item in numbers)
             {
                 Console.WriteLine(item);
