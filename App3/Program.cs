@@ -17,7 +17,7 @@ namespace App3
         /// <returns></returns>
         public static IEnumerable<(T item, int? tail)> EnumerateFromTail<T>(this IEnumerable<T> enumerable, int? tailLength)
         {
-            IList<(T item, int? tail)> items = new List<(T item, int? tail)>();
+            List<(T item, int? tail)> items = new List<(T item, int? tail)>();
             int l = enumerable.Count();
             if(tailLength <= 0 || tailLength == null)
             {
